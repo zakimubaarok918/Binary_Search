@@ -8,3 +8,16 @@ int x;
 int main() {
     return 0;
 }
+
+void input() {
+    while (true) {
+        cout << "Masukkan banyaknya elemen pada array (maksimal 10): ";
+        cin >> nPanjang;
+        if (nPanjang <= 10) break;
+        cout << "\n[!] Jumlah elemen tidak boleh lebih dari 10.\n";
+    }
+    for (int i = 0; i < nPanjang; i++) {
+        cout << "Data ke-" << i + 1 << ": ";
+        cin >> element[i];
+    }
+}
