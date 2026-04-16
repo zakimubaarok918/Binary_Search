@@ -149,3 +149,51 @@ void bubbleSortArray()
         }
     } while (pass++ < nPanjang - 1); // Memperbaiki 'whiile' menjadi 'while'
 }
+
+void binarySearch()
+{
+    char ulang;
+    do
+    {
+        cout << "\n=====================================\n";
+        cout << "       Pencarian Binary Search         \n";
+        cout << "\n=====================================\n";
+
+        cout << "Masukkan elemen yang ingin dicari: ";
+        cin >> x;
+
+        int low = 0;
+        int high = nPanjang - 1;
+        bool ditemukan = false; 
+
+        while (low <= high)
+        {
+            int mid = low + (high - low) / 2; 
+
+            if (element[mid] == x)
+            {
+                cout << "\n[✓] Elemen " << x << " ditemukan pada indeks " << mid << ".\n";
+                ditemukan = true;
+                break; 
+            }
+
+            if (x < element[mid])
+            {
+                high = mid - 1; 
+            }
+            else 
+            {
+                low = mid + 1; 
+            }
+        }
+
+        if (!ditemukan)
+        {
+            cout << "\n[x] Elemen " << x << " tidak ditemukan dalam array.\n";
+        }
+
+        cout << "\nIngin mencari lagi? (y/n): ";
+        cin >> ulang;
+
+    } while (ulang == 'y' || ulang == 'Y');
+}
